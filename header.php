@@ -7,19 +7,18 @@
 
 <title><?php bloginfo('name'); ?> <?php wp_title('&laquo', true, 'right'); ?></title>
 
-<!-- Meta Tag Validators -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
-
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha256-ZT4HPpdCOt2lvDkXokHuhJfdOKSPFLzeAJik5U/Q+l4=" crossorigin="anonymous" />
+  
 <?php wp_head(); ?>
 
 </head>
 
 <body>
 
-<div id="header" class="container-fluid">
+<header id="mainHeader" class="container-fluid">
   <div class="container">
       <section class="row">
           <div id="menu" class="col-md-9">
@@ -34,10 +33,10 @@
                   </div>
 
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <?php wp_nav_menu(array('menu'=>'Primary Menu', 'menu_class' => 'nav navbar-nav' )); ?>
+                    <?php wp_nav_menu(array('menu'=>'Primary Menu', 'menu_class' => 'nav navbar-nav' )); ?>
                   </div>
               </nav>
           </div>
       </section>
   </div>
-</div>
+</header>
