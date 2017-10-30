@@ -3,11 +3,9 @@
 <div id="catPage" class="container">
 	<section id="main-content" class="row">
 		<div class="col-md-8 innerp">
-				<?php if (have_posts()) : ?>
-          		<h2 class="singleTitlePage">
-					<?php printf( __( '%s' ), single_cat_title( '', false ) ); ?>
-				</h2>
-                <?php while (have_posts()) : the_post(); ?>
+			<?php if (have_posts()) : ?>
+					<h2 class="single-title-cat"><?php printf( __( '%s' ), single_cat_title( '', false ) ); ?></h2>
+					<?php while (have_posts()) : the_post(); ?>
 
 			<?php if ( has_post_thumbnail() ) { ?>
 				<div id="catRow" class="row">
