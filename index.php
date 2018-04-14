@@ -1,19 +1,27 @@
 <?php get_header(); ?>
 
-<div id="indexPage" class="container">
-    <section class="row">
-        <div id="post-content clearfix" class="col-md-8 innerp">
-          
-            <?php
-            while ( have_posts() ) : the_post();
-              get_template_part( 'templates/loop', 'single' );  
-            endwhile;
-            ?>
+<div class="container">
+  <section class="row">
+    <div id="post-content clearfix" class="col-md-8 innerp">
+      <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
 
-        </div>
+          <?php
+            get_template_part( 'templates/loop', 'content' );
+          ?>
 
-        <?php get_sidebar(); ?>
-        
+        <?php endwhile; ?>
+        <?php else : ?>
+
+        <h2 class="center">Not Found</h2>
+        <p class="center">Sorry, but you are looking for something that isn't here.</p>
+        <?php get_search_form(); ?>
+
+      <?php endif; ?>
+      <?php wp_reset_query(); ?>
+
+    </div>
+    <?php get_sidebar(); ?>
   </section>
 </div>
 
